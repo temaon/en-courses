@@ -1,0 +1,6 @@
+/ Main Slider
+%section.banner
+  .rev_slider_wrapper{style: 'height: 550px'}
+    #main_slider.rev_slider{"data-version" => "5.0"}
+      %ul
+        = render partial: 'home/partials/slider_item', collection: @slides, as: :slide

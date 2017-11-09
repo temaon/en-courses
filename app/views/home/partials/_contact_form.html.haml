@@ -1,0 +1,31 @@
+.col-md-4.col-sm-12.col-xs-12
+  .comment-box
+    .title-box.text-center
+      %h4
+        %i.flaticon-nature
+        ЗАКАЗАТЬ КУРC
+    .default-form-area
+      %form#contact-form.default-form{:action => "inc/sendmail.php", :method => "post", :name => "contact_form", :novalidate => "novalidate"}
+        .form-group
+          %h6 ИМЯ
+          %input.form-control{:name => "form_name", :placeholder => "Enter your Name", :required => "", :type => "text", :value => ""}/
+        .form-group
+          %h6 ТЕЛЕФОН
+          %input.form-control.required{:name => "form_phone", :placeholder => "Enter your Phone", :required => "", :type => "phone", :value => ""}/
+        .form-group
+          %h6 EMAIL
+          %input.form-control.required.email{:name => "form_email", :placeholder => "Enter your Email", :required => "", :type => "email", :value => ""}/
+        .form-group
+          %h6 КУРС
+          -#=select('request', 'course_id', get_courses_list, {prompt: 'Выберите курс...'}, class: %i(text-capitalize selectpicker form-control required), data: {style: :'g-select', width: '100%'})
+
+          -#%select.text-capitalize.selectpicker.form-control.required{"data-style" => "g-select", "data-width" => "100%", :name => "form_subject"}
+          -#  %option Currency
+          -#  %option Insurance
+          -#  %option Finance
+        .form-group
+          %h6 СООБЩЕНИЕ
+          %textarea.form-control.required{:name => "form_message", :placeholder => "Введите сообщение", :required => ""}
+        .form-group.text-center
+          %input#form_botcheck.form-control{:name => "form_botcheck", :type => "hidden", :value => ""}/
+          %button.btn-style-one{"data-loading-text" => "Please wait...", :type => "submit"} Отправить запрос

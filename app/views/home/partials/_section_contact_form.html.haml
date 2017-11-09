@@ -1,0 +1,32 @@
+/ contact-form
+%section.contact-form
+  .container
+    .form-widght.clearfix
+      %ul.form-section.pull-left
+        %li.item
+          %h5 NAME
+          .form-group
+            %input{:name => "fname", :placeholder => "Enter your Name", :required => "", :type => "text", :value => ""}/
+        %li.item
+          %h5 EMAIL
+          .form-group
+            %input{:name => "email", :placeholder => "Enter Your Email", :required => "", :type => "email", :value => ""}/
+        %li.item
+          %h5 SELECT COURSE
+          .form-group
+            %select{:name => "subject"}
+              %option Select Your Course
+              %option Insurance
+              %option Finance
+      %li.search_option.pull-right
+        .outer-search-box
+          .seach-toggle
+            %i.flaticon-search
+          %ul.search-box
+            %li
+              %form{:action => "index.html", :method => "post"}
+                .form-group
+                  %input{:name => "search", :placeholder => "Search Here", :required => "", :type => "search"}/
+                  %button{:type => "submit"}
+                    %i.flaticon-search
+                    / contact-form end

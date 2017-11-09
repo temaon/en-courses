@@ -1,0 +1,11 @@
+/ Sponsors Style Two
+%section.sponsors-logos.style-two
+  .your-logo.wow.fadeInUp
+    .container
+      %ul.sponsors-slider
+        - @partners.each do |item|
+          %li
+            .image-box
+              = link_to item.site_url, target: :_blank do
+                = image_tag item.icon.url(:thumb)
+/ End Sponsors Style Two

@@ -1,0 +1,188 @@
+%header.main-header
+  / Main Header
+  .header-upper
+    .container
+      .header-upper-bg.clearfix
+        .main-logo.pull-left
+          %figure
+            = link_to root_path do
+              = image_tag 'logo.png'
+        .top-info.pull-right
+          %ul
+            %li.single-info-box
+              .icon-holder
+                %span.flaticon-phone-call
+              .text-holder
+                %p
+                  = "+38 /057/ 706 00 38"
+                  %br
+                  = "+38 /099/ 924 32 43"
+                  %br
+                  = "+38 /050/ 992 43 40"
+            %li.single-info-box
+              .icon-holder
+                %span.flaticon-envelope
+              .text-holder
+                = mail_to 'angloconnect.com@gmail.com' do
+                  %p
+                    %span EMAIL:
+                    = succeed 'angloconnect.com@gmail.com' do
+                      %br/
+            %li.single-info-box
+              .icon-holder
+                %i.fa.fa-skype{aria: {hidden: true}}
+              .text-holder
+                = link_to 'skype:anglo.connect' do
+                  %p
+                    %span SKYPE:
+                    = succeed 'anglo.connect' do
+                      %br/
+  .header-lower
+    .container.menu-bg
+      .row.menu-bar.clearfix
+        %nav.main-menu
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+          .navbar-collapse.collapse.clearfix
+            %ul.navigation.clearfix
+              %li
+                = link_to root_path do
+                  %i.fa.fa-home
+                  Главная
+              %li.dropdown
+                %a{:href => "#"} ПРО НАС
+                %ul
+                  %li
+                    %a{:href => "about.html"} about us
+                  %li
+                    %a{:href => "service.html"} Service page
+                  %li
+                    %a{:href => "events.html"} events
+                  %li
+                    %a{:href => "events-2.html"} events single
+              %li.dropdown
+                %a{:href => "#"} КУРСЫ
+                %ul
+                  %li
+                    %a{:href => "course.html"} courses grid
+                  %li
+                    %a{:href => "course-2.html"} courses list
+                  %li
+                    %a{:href => "course-3.html"} courses single
+              %li.dropdown
+                %a{:href => "blog.html"} НОВОСТИ
+                %ul
+                  %li
+                    %a{:href => "blog.html"} Blog Default
+                  %li
+                    %a{:href => "blog-2.html"} Blog Standard
+                  %li
+                    %a{:href => "blog-3.html"} Blog Single
+              %li
+                %a{:href => "contact.html"} СВЯЗЬ
+        %ul.nav_right_area
+          %li.search_option
+            .outer-search-box
+              .seach-toggle
+                %i.fa.fa-search
+              %ul.search-box
+                %li
+                  %form{:action => "index.html", :method => "post"}
+                    .form-group
+                      %input{:name => "search", :placeholder => "Поиск...", :required => "", :type => "search"}/
+                      %button{:type => "submit"}
+                        %i.fa.fa-search
+          %li.login-option
+            - if current_frontend_user.present?
+              = link_to destroy_frontend_user_session_path, method: :delete do
+                %i.flaticon-login
+                %span Выход
+            - else
+              = link_to new_frontend_user_session_path do
+                %i.flaticon-login
+                %span Вход
+          -#%li#polyglotLanguageSwitcher
+          -#  %i.flaticon-world
+          -#  %form{:action => "#"}
+          -#    %select#polyglot-language-options
+          -#      %option#en{:selected => "selected", :value => "en"} eng
+          -#      %option#fr{:value => "fr"} Fre
+          -#      %option#de{:value => "de"} Ger
+          -#      %option#it{:value => "it"} Ita
+          -#      %option#es{:value => "es"} Spa
+  / End #polyglotLanguageSwitcher
+  / Sticky Header
+  .sticky-header
+    .container.menu-bg
+      .row.menu-bar.clearfix
+        %nav.main-menu
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+          .navbar-collapse.collapse.clearfix
+            %ul.navigation.clearfix
+              %li.dropdown
+                %a{:href => "#"}
+                  %i.fa.fa-home>
+                  Home
+                %ul
+                  %li
+                    %a{:href => "index.html"} home one
+                  %li
+                    %a{:href => "index-2.html"} home two
+                  %li
+                    %a{:href => "index-3.html"} home three
+              %li.dropdown
+                %a{:href => "#"} about us
+                %ul
+                  %li
+                    %a{:href => "about.html"} about us
+                  %li
+                    %a{:href => "service.html"} Service page
+                  %li
+                    %a{:href => "events.html"} events
+                  %li
+                    %a{:href => "events-2.html"} events single
+              %li.dropdown
+                %a{:href => "#"} OUR COURSES
+                %ul
+                  %li
+                    %a{:href => "course.html"} courses grid
+                  %li
+                    %a{:href => "course-2.html"} courses list
+                  %li
+                    %a{:href => "course-3.html"} courses single
+              %li
+                %a{:href => "gallery.html"} GALLERY
+              %li.dropdown
+                %a{:href => "blog.html"} Blog
+                %ul
+                  %li
+                    %a{:href => "blog.html"} Blog Default
+                  %li
+                    %a{:href => "blog-2.html"} Blog Standard
+                  %li
+                    %a{:href => "blog-3.html"} Blog Single
+              %li
+                %a{:href => "contact.html"} CONTACT US
+        %ul.nav_right_area
+          %li.search_option
+            .outer-search-box
+              .seach-toggle
+                %i.fa.fa-search
+              %ul.search-box
+                %li
+                  %form{:action => "index.html", :method => "post"}
+                    .form-group
+                      %input{:name => "search", :placeholder => "Search Here", :required => "", :type => "search"}/
+                      %button{:type => "submit"}
+                        %i.fa.fa-search
+          %li.login-option
+            %a{:href => "#"}
+              %i.flaticon-login
+              %span Sign in or Register

@@ -1,0 +1,11 @@
+%li.slide_show{class: "slide_#{slide_counter.next}", "data-description" => "", "data-easein" => "default", "data-easeout" => "default", "data-index" => "rs-35#{slide_counter.next}", "data-masterspeed" => "default", "data-rotate" => "0", "data-saveperformance" => "off", "data-slotamount" => "default", "data-title" => "Slide Boxes", "data-transition" => slide.slide_type}
+  / Slide_show
+  %img.rev-slidebg{:alt => "", "data-bgfit" => "cover", "data-bgposition" => "center center", "data-bgrepeat" => "no-repeat", :src => slide.slide_image.url(:gallery)}/
+  .tp-caption{"data-hoffset" => "0", "data-mask_out" => "x:inherit;y:inherit;s:inherit;e:inherit;", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "2000", "data-transform_idle" => "o:1;", "data-transform_in" => "z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;", "data-transform_out" => "y:[100%];s:1000;s:1000;", "data-voffset" => "-180", "data-whitespace" => "nowrap", "data-x" => "center", "data-y" => "center"}
+  .main_heading.tp-caption.tp-resizeme{"data-hoffset" => "0", "data-mask_out" => "x:inherit;y:inherit;s:inherit;e:inherit;", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "2000", "data-transform_idle" => "o:1;", "data-transform_in" => "z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:2000;e:Power3.easeInOut;", "data-transform_out" => "y:[100%];s:1000;s:1000;", "data-voffset" => "-50", "data-whitespace" => "nowrap", "data-x" => "center", "data-y" => "center"}
+    = link_to slide.url do
+      %h1
+        = slide.title.html_safe
+      .slide_description
+        %span
+          = slide.description

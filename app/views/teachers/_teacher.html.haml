@@ -1,0 +1,31 @@
+.item.text-center
+  .image-box
+    %figure
+      = image_tag teacher.avatar.url(:fancy)
+    .hover-text
+      .icon-links
+        - if teacher.social_fb.present?
+          = link_to(teacher.social_fb, target: :_blank) do
+            %i.fa.fa-facebook{'aria-hidden': true}
+        - if teacher.social_vk.present?
+          = link_to teacher.social_vk, target: :_blank do
+            %i.fa.fa-vk{'aria-hidden': true}
+        - if teacher.social_sk.present?
+          = link_to "skype:#{teacher.social_sk}", target: :_blank do
+            %i.fa.fa-skype{'aria-hidden': true}
+      = link_to '#' do
+        %h5
+          = teacher.name
+      %p
+        = teacher.position
+  .fixed-text
+    .icon-links
+      - if teacher.social_fb.present?
+        = link_to(teacher.social_fb, target: :_blank) do
+          %i.fa.fa-facebook{'aria-hidden': true}
+        - if teacher.social_vk.present?
+          = link_to teacher.social_vk, target: :_blank do
+            %i.fa.fa-vk{'aria-hidden': true}
+        - if teacher.social_sk.present?
+          = link_to "skype:#{teacher.social_sk}", target: :_blank do
+            %i.fa.fa-skype{'aria-hidden': true}

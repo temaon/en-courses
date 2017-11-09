@@ -1,0 +1,366 @@
+= render 'home/partials/section_slider'
+= render 'home/partials/partners'
+= render 'home/partials/service_section'
+/ gallery_wrapper
+.gallery_wrapper
+  .section-title.text-center
+    %h3 НАШИ КУРСЫ
+    %p Мы делаем ваш английский лучшe
+  .container.menu_wrapper
+    %ul.gallery_menu
+      %li.filter.tran3s.active{"data-filter" => "all"} Все
+      - @courses_categories.each do |category|
+        %li.filter.tran3s{"data-filter" => category[:class]}
+          = category[:title]
+  #mixitup_list.gallery_item_container.gallery_style_eight.gallery_text.container{style: 'display:table;'}
+    .row{style: 'display:table-row;'}
+      - @courses.each do |course|
+        = render partial: 'home/partials/course', locals: {course: course}
+%section.fact-counter{:style => "background-image:url(resource/1.jpg);"}
+  .auto-container
+    .row.clearfix
+      .counter-outer.clearfix
+        / Column
+        %article.column.counter-column.col-md-3.col-sm-6.col-xs-12.wow.fadeIn{"data-wow-duration" => "0ms", :style => "visibility: hidden; animation-duration: 0ms; animation-name: none;"}
+          .icon
+            %span.flaticon-graduate-user-icon
+          .count-outer
+            %span.count-text{"data-speed" => "1500", "data-stop" => "7500"} 0
+            %i.fa.fa-plus{"aria-hidden" => "true"}
+          %h4.counter-title Students
+        / Column
+        %article.column.counter-column.col-md-3.col-sm-6.col-xs-12.wow.fadeIn{"data-wow-duration" => "0ms", :style => "visibility: hidden; animation-duration: 0ms; animation-name: none;"}
+          .icon
+            %span.flaticon-drawing
+          .count-outer
+            %span.count-text{"data-speed" => "1000", "data-stop" => "350"} 0
+          %h4.counter-title Courses
+        / Column
+        %article.column.counter-column.col-md-3.col-sm-6.col-xs-12.wow.fadeIn{"data-wow-duration" => "0ms", :style => "visibility: hidden; animation-duration: 0ms; animation-name: none;"}
+          .icon
+            %span.flaticon-suitcase
+          .count-outer
+            %span.count-text{"data-speed" => "1000", "data-stop" => "150"} 0
+            %i.fa.fa-plus{"aria-hidden" => "true"}
+          %h4.counter-title Faculties
+        / Column
+        %article.column.counter-column.col-md-3.col-sm-6.col-xs-12.wow.fadeIn{"data-wow-duration" => "0ms", :style => "visibility: hidden; animation-duration: 0ms; animation-name: none;"}
+          .icon
+            %span.flaticon-diploma
+          .count-outer
+            %span.count-text{"data-speed" => "1000", "data-stop" => "100"} 0
+            %i.fa.fa-percent{"aria-hidden" => "true"}
+          %h4.counter-title Placement
+/ End Fact Counter
+/ gallery-section
+%section.gallery-section
+  .container
+    .section-title.text-center
+      %h3 OUR GALLERY
+      %p The Love Boat soon will be making another run the Love Boat promises something for everyone
+    .sortable-masonry
+      .row.item-container.clearfix{:style => "position: relative; height: 795px;"}
+        .col-md-4.col-sm-6.col-xs-12.masonry-item.default-portfolio-item{:style => "position: absolute; left: 0px; top: 0px;"}
+          .inner-box
+            %figure.image-box
+              %img{:alt => "", :src => image_path("gallery/7.jpg")}/
+            / Overlay Box
+            .overlay-box.text-center
+              .overlay-inner
+                %a.image-link.has-gallery-popup{:href => "#gallery-popup", :title => "Open Gallery Popup"}
+                  %h5 SYMPOSIUM
+                  %span.icon.flaticon-plus-symbol
+        .col-md-4.col-sm-6.col-xs-12.masonry-item.default-portfolio-item{:style => "position: absolute; left: 400px; top: 0px;"}
+          .inner-box
+            %figure.image-box
+              %img{:alt => "", :src => image_path("gallery/8.jpg")}/
+            / Overlay Box
+            .overlay-box.text-center
+              .overlay-inner
+                %a.image-link.has-gallery-popup{:href => "#gallery-popup", :title => "Open Gallery Popup"}
+                  %h5 SYMPOSIUM
+                  %span.icon.flaticon-plus-symbol
+        .col-md-4.col-sm-6.col-xs-12.masonry-item.default-portfolio-item{:style => "position: absolute; left: 800px; top: 0px;"}
+          .inner-box
+            %figure.image-box
+              %img{:alt => "", :src => image_path("gallery/9.jpg")}/
+            / Overlay Box
+            .overlay-box.text-center
+              .overlay-inner
+                %a.image-link.has-gallery-popup{:href => "#gallery-popup", :title => "Open Gallery Popup"}
+                  %h5 SYMPOSIUM
+                  %span.icon.flaticon-plus-symbol
+        .col-md-4.col-sm-6.col-xs-12.masonry-item.default-portfolio-item{:style => "position: absolute; left: 0px; top: 265px;"}
+          .inner-box
+            %figure.image-box
+              %img{:alt => "", :src => image_path("gallery/10.jpg")}/
+            / Overlay Box
+            .overlay-box.text-center
+              .overlay-inner
+                %a.image-link.has-gallery-popup{:href => "#gallery-popup", :title => "Open Gallery Popup"}
+                  %h5 SYMPOSIUM
+                  %span.icon.flaticon-plus-symbol
+        .col-md-4.col-sm-6.col-xs-12.masonry-item.default-portfolio-item{:style => "position: absolute; left: 400px; top: 265px;"}
+          .inner-box
+            %figure.image-box
+              %img{:alt => "", :src => image_path("gallery/11.jpg")}/
+            / Overlay Box
+            .overlay-box.text-center
+              .overlay-inner
+                %a.image-link.has-gallery-popup{:href => "#gallery-popup", :title => "Open Gallery Popup"}
+                  %h5 SYMPOSIUM
+                  %span.icon.flaticon-plus-symbol
+        .col-md-8.col-sm-6.col-xs-12.masonry-item.default-portfolio-item{:style => "position: absolute; left: 0px; top: 530px;"}
+          .inner-box
+            %figure.image-box
+              %img{:alt => "", :src => image_path("gallery/12.jpg")}/
+            / Overlay Box
+            .overlay-box.text-center
+              .overlay-inner
+                %a.image-link.has-gallery-popup{:href => "#gallery-popup", :title => "Open Gallery Popup"}
+                  %h5 SYMPOSIUM
+                  %span.icon.flaticon-plus-symbol
+        .col-md-4.col-sm-6.col-xs-12.masonry-item.default-portfolio-item{:style => "position: absolute; left: 800px; top: 530px;"}
+          .inner-box
+            %figure.image-box
+              %img{:alt => "", :src => image_path("gallery/13.jpg")}/
+            / Overlay Box
+            .overlay-box.text-center
+              .overlay-inner
+                %a.image-link.has-gallery-popup{:href => "#gallery-popup", :title => "Open Gallery Popup"}
+                  %h5 SYMPOSIUM
+                  %span.icon.flaticon-plus-symbol
+      .link-btn.text-center
+        %a{:href => "gallery.html"} VIEW ALL
+/ End gallery-section
+/ Faculties-section
+%section.faculties-section
+  .container
+    .section-title.text-center
+      %h3 НАШИ ПРЕПОДАВАТЕЛИ
+      %p The Love Boat soon will be making another run the Love Boat promises something for everyone
+    .row
+      -#- if @teachers.size > 3
+      = swiper(@teachers) do |teacher|
+        - render(partial: 'teachers/teacher', locals: {teacher: teacher}).html_safe
+      .swiper-pagination
+
+/ End Faculties-section
+/ blog-section
+%section.blog-section
+  .container
+    .row
+      .col-md-6.col-sm-12.col-xs-12
+        .section-title
+          %h3 ПОСЛЕДНИИ ПУБЛИКАЦИИ
+        %ul.blog-column
+          %li.item
+            .images-box
+              %figure
+                %a{:href => "blog-3.html"}
+                  %img{:alt => "", :src => image_path("blog/1.jpg")}/
+            .content-text
+              %a{:href => "blog-3.html"}
+                %h5 The Love Boat soon will be making another run boat promises something for everyone
+              %ul.icon-links
+                %li
+                  %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}>
+                  John Abraham
+                %li
+                  %i.fa.fa-calendar{"aria-hidden" => "true"}>
+                  Sep 15, 2016
+                %li
+                  %i.fa.fa-commenting-o{"aria-hidden" => "true"}>
+                  5 Comments
+          %li.item
+            .images-box
+              %figure
+                %a{:href => "blog-3.html"}
+                  %img{:alt => "", :src => image_path("blog/2.jpg")}/
+            .content-text
+              %a{:href => "blog-3.html"}
+                %h5 The Love Boat soon will be making another run boat promises something for everyone
+              %ul.icon-links
+                %li
+                  %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}>
+                  John Abraham
+                %li
+                  %i.fa.fa-calendar{"aria-hidden" => "true"}>
+                  Sep 15, 2016
+                %li
+                  %i.fa.fa-commenting-o{"aria-hidden" => "true"}>
+                  5 Comments
+          %li.item
+            .images-box
+              %figure
+                %a{:href => "blog-3.html"}
+                  %img{:alt => "", :src => image_path("blog/3.jpg")}/
+            .content-text
+              %a{:href => "blog-3.html"}
+                %h5 The Love Boat soon will be making another run boat promises something for everyone
+              %ul.icon-links
+                %li
+                  %i.fa.fa-pencil-square-o{"aria-hidden" => "true"}>
+                  John Abraham
+                %li
+                  %i.fa.fa-calendar{"aria-hidden" => "true"}>
+                  Sep 15, 2016
+                %li
+                  %i.fa.fa-commenting-o{"aria-hidden" => "true"}>
+                  5 Comments
+      .col-md-6.col-sm-12.col-xs-12
+        .section-title
+          %h3 ПОПУЛЯРНЫЕ СТАТЬИ
+        .events-column
+          .row
+            .col-md-6.col-sm-12.col-xs-12
+              .image-box
+                %figure
+                  %a{:href => "blog-3.html"}
+                    %img{:alt => "", :src => image_path("blog/4.jpg")}/
+              .content-box
+                %span.flaticon-diploma
+                %ul.icon-links
+                  %li
+                    %i.fa.fa-calendar{"aria-hidden" => "true"}>
+                    October 02, 2016
+                  %li
+                    %i.fa.fa-clock-o{"aria-hidden" => "true"}>
+                    11.30am
+                %a{:href => "blog-3.html"}
+                  %h5 CAMPUS RECRUITMENT
+                %p The Love Boat soon will be ended mac making another run.
+            .col-md-6.col-sm-12.col-xs-12
+              .image-box
+                %figure
+                  %a{:href => "blog-3.html"}
+                    %img{:alt => "", :src => image_path("blog/5.jpg")}/
+              .content-box
+                %span.flaticon-students-cap
+                %ul.icon-links
+                  %li
+                    %i.fa.fa-calendar{"aria-hidden" => "true"}>
+                    October 02, 2016
+                  %li
+                    %i.fa.fa-clock-o{"aria-hidden" => "true"}>
+                    11.30am
+                %a{:href => "blog-3.html"}
+                  %h5 CAMPUS RECRUITMENT
+                %p The Love Boat soon will be ended mac making another run.
+/ End blog-section
+/ Sponsors Style Two
+%section.sponsors-logos
+  .your-logo.wow.fadeInUp{:style => "visibility: hidden; animation-name: none;"}
+    .container
+      %ul.sponsors-slider.owl-carousel.owl-theme.owl-loaded
+        .owl-stage-outer
+          .owl-stage{:style => "transform: translate3d(-1992px, 0px, 0px); transition: 0.4s; width: 4980px;"}
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/1.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/2.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/3.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/4.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/5.png")}/
+            .owl-item{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/1.png")}/
+            .owl-item{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/2.png")}/
+            .owl-item{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/3.png")}/
+            .owl-item.active{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/4.png")}/
+            .owl-item.active{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/5.png")}/
+            .owl-item.active{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/1.png")}/
+            .owl-item.active{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/2.png")}/
+            .owl-item.active{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/3.png")}/
+            .owl-item{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/4.png")}/
+            .owl-item{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/5.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/1.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/2.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/3.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/4.png")}/
+            .owl-item.cloned{:style => "width: 174px; margin-right: 75px;"}
+              %li
+                .image-box
+                  %a{:href => "#"}
+                    %img{:alt => "", :src => image_path("clients/5.png")}/
+        .owl-controls
+          .owl-nav
+            .owl-prev{:style => ""}
+            .owl-next{:style => ""}
+          .owl-dots{:style => ""}
+            .owl-dot.active
+              %span
+            .owl-dot
+              %span

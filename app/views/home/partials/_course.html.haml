@@ -1,0 +1,37 @@
+.col-lg-4.col-md-4.col-sm-12.col-xs-12.mix{"data-bound" => "", :style => "display:table-cell;", class: "category_class_#{course.category.id}"}
+  .single_item
+    .img_holder
+      = image_tag course.main_image(:fancy), alt: course.title, class: %i(img-responsive)
+      .overlay.tran3s
+        .link
+          = link_to course.main_image(:full_content), class: :fancybox do
+            %i.flaticon-plus-symbol
+    / End .overlay
+    / End .img_holder
+    .content
+      = link_to course_path course.category, course do
+        %h5
+          = course.title
+      -#.reting-box
+                -#%i.fa.fa-star{"aria-hidden" => "true"}
+                -#%i.fa.fa-star{"aria-hidden" => "true"}
+                -#%i.fa.fa-star{"aria-hidden" => "true"}
+                -#%i.fa.fa-star{"aria-hidden" => "true"}
+                -#%i.fa.fa-star-half-o{"aria-hidden" => "true"}
+      %p
+        = course.short_description
+      %a{:href => "course-3.html"}
+        =  'ПОДРОБНО'
+      .price-many
+        %span
+          != '&#x20b4;'
+        = course.price
+    / End .title
+    %ul.content-text
+      %li.time-duration
+        %i.flaticon-time
+        = "Длительность: #{course.duration} Yrs"
+      %li.students
+        %i.flaticon-students-cap
+        = "#{course.students_count} студентов"
+        / End .single_item

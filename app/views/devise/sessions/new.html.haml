@@ -1,0 +1,22 @@
+%section.sign-in.scroll-to-this
+  .container{ class: %i(h-100 d-flex justify-content-center)}
+    .row
+      .col-md-4.col-sm-12.col-xs-12
+        .comment-box
+          .title-box.text-center
+            %h4
+              %i.flaticon-nature>
+              Форма входа
+          .default-form-area
+            = simple_form_for(resource, as: resource_name, url: session_path(resource_name), novalidate: :novalidate, html: { class: %i(default-form)}) do |f|
+              .form-group
+                = f.input :email, autofocus: true, label: 'ИМЯ', placeholder: 'Введите email', required: false, input_html: { class: %i(form-control)}
+              .form-group
+                = f.input :password, required: false, label: 'ПАРОЛЬ', placeholder: 'Введите пароль', input_html: { class: %i(form-control)}
+              .form-group
+                = f.input :remember_me, label: 'Запомнить', as: :boolean, class: %i(form-control) if devise_mapping.rememberable?
+              .form-group.text-center
+                -#%input#form_botcheck.form-control{:name => "form_botcheck", :type => "hidden", :value => ""}/
+                = f.button :submit, 'Войти', class: %i(form-control)
+                -#%button.btn-style-one{"data-loading-text" => "Please wait...", :type => "submit"} Отправить запрос
+            = render 'devise/shared/links'

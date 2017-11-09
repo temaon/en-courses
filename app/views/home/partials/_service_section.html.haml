@@ -1,0 +1,25 @@
+/ services section
+%section.about-us.scroll-to-this
+  .container
+    .col-md-8.col-sm-12.col-xs-12
+      .section-title
+        %h3 НАШИ УСЛУГИ
+        %p Что-то, что мы можем предложить
+      - rows = @services.each_slice(2)
+      - rows.with_index do |item, i|
+        .row
+          - item.each do |service|
+            .col-md-6.col-sm-6.col-xs-12
+              .item
+                - if service.icon.present?
+                  %figure
+                    = link_to '#' do
+                      = image_tag service.icon.url(:thumb)
+                .content-text
+                  %i.flaticon-books-stack-of-three
+                  = link_to '#' do
+                    %h5
+                      = service.title
+                  %p
+                    = service.short_description
+    = render partial: 'home/partials/contact_form'

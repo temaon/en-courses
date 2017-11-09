@@ -1,0 +1,121 @@
+/ Page Title
+%section.page-title{:style => "background-image:url('#{course.image_banners.first.url(:banner)}');"}
+  .container
+    .title-text{:style => "background-image:url(images/icons/page-title.png);opacity:.8"}
+      %h1
+        = course.title
+      %ul.title-menu.clearfix
+        = render_breadcrumbs separator: '&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;', tag: :li
+/ End Page Title
+%section.courses-section
+  .container
+    .row
+      .col-md-9.col-sm-12.col-xs-12
+        .left-side
+          .image-box
+            - if course.images.size > 1
+              = swiper(course.images) do |item|
+                - image_tag item.data.url(:content)
+              .swiper-pagination
+            - else
+              %figure
+                = image_tag course.main_image(:content), class: 'img-center', alt: course.title
+            .Reviews-section.clearfix
+              .pull-left
+                .reting
+                  -#%i.fa.fa-star{"aria-hidden" => "true"}
+                  -#%i.fa.fa-star{"aria-hidden" => "true"}
+                  -#%i.fa.fa-star{"aria-hidden" => "true"}
+                  -#%i.fa.fa-star{"aria-hidden" => "true"}
+                  -#%i.fa.fa-star-o{"aria-hidden" => "true"}
+                  -#%span 4 Reviews
+                - if prev_course.present?
+                  .prev-links
+                    = link_to course_path(prev_course.id) do
+                      %i.fa.fa-angle-left{"aria-hidden" => "true"}
+                      Previous Course
+              .pull-right
+                %ul.time-duretion
+                  %li
+                    %i.fa.fa-hourglass-start{"aria-hidden" => "true"}
+                    Duration: 5 Yrs
+                  %li
+                    %i.fa.fa-eye{"aria-hidden" => "true"}
+                      = course.watches_count
+                  - if next_course.present?
+                    .prev-links
+                      = link_to course_path(next_course.id) do
+                        Next Course
+                        %i.fa.fa-angle-right{"aria-hidden" => "true"}
+            .content-text
+              = course.description.html_safe
+            -#.content-text
+            -#  .content-title
+            -#    %h5 DEGREE DESCRIPTIONS
+            -#  .content
+            -#    %p The Love Boat soon will be making another run Boat promises something they really are a scream the addams family believe it or not am walking on air never thought I could feel so free flying away on a wing you wanna be where you can see our troubles are all the same. You wanna be where everybody knows your name.
+            -#    .content-link
+            -#      .row
+            -#        .col-md-6.col-sm-6.col-xs-12
+            -#          %figure
+            -#            %img{:alt => "", :src => "images/blog/13.jpg"}
+            -#          .col-md-6.col-sm-6.col-xs-12
+            -#            %figure
+            -#              %img{:alt => "", :src => "images/blog/14.jpg"}
+            -#    .content-text
+            -#      .content-title
+            -#        %h5 CONTACT INFORMATION
+            -#      .content.style-two
+            -#        %p The Love Boat soon will be making another run Boat promises something they really are a scream the addams family believe it or not am walking on air never thought I could fee.
+            -#        .content-link
+            -#          .row
+            -#            .col-md-4.col-sm-6.col-xs-12
+            -#              %ul
+            -#                %li Office of Cologne University
+            -#                %li Dr.Fernandez Hell M.D., Dean
+            -#                %li Belltown Street H407
+            -#                %li PO Box 642006
+            -#                %li
+            -#                  %a{:href => "#"} Telephone: 1-234-567-890
+            -#                %li
+            -#                  %a{:href => "#"} Fax: 1-234-567-890
+            -#                %li
+            -#                  %a{:href => "#"} fernandez@cologne.com
+            -#            .col-md-4.col-sm-6.col-xs-12
+            -#              %ul.right-spece
+            -#                %li Office of Cologne University
+            -#                %li Dr.Fernandez Hell M.D., Dean
+            -#                %li Belltown Street H407
+            -#                %li PO Box 642006
+            -#                %li
+            -#                  %a{:href => "#"} Telephone: 1-234-567-890
+            -#                %li
+            -#                  %a{:href => "#"} Fax: 1-234-567-890
+            -#                %li
+            -#                  %a{:href => "#"} fernandez@cologne.com
+            -#            .col-md-4.col-sm-6.col-xs-12
+            -#              %ul.right-spece
+            -#                %li Office of Cologne University
+            -#                %li Dr.Fernandez Hell M.D., Dean
+            -#                %li Belltown Street H407
+            -#                %li PO Box 642006
+            -#                %li
+            -#                  %a{:href => "#"} Telephone: 1-234-567-890
+            -#                %li
+            -#                  %a{:href => "#"} Fax: 1-234-567-890
+            -#                %li
+            -#                  %a{:href => "#"} fernandez@cologne.com
+            -#      .link-btn
+            -#        %a{:href => "#"} apply now
+      = render 'courses/partials/right_sidebar', course: course
+
+%section.faculties-section
+  .container
+    .section-title.text-center
+      %h3 ПРЕПОДАВАТЕЛИ КУРСА
+    .row
+      -#- if @teachers.size > 3
+      = swiper(course.teachers) do |teacher|
+        - render(partial: 'teachers/teacher', locals: {teacher: teacher}).html_safe
+
+      / End Faculties-section

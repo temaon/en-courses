@@ -1,0 +1,57 @@
+.col-md-3.col-sm-12.col-xs-12
+  .right-side
+    .section-title
+      %h5 Информация курса
+    .item-menu
+      %ul.item-list
+        %li
+          Уровень:
+          %span Graduate Program
+        %li
+          Преподаватели:
+          %span
+            = course.teachers.size
+        %li
+          Студенты:
+          %span
+            = '0'
+        %li
+          Дата старта:
+          %span
+            = course.date_start.strftime('%d %b, %Y')
+        %li
+          Дата завершения:
+          %span
+            = course.date_end.strftime('%b %Y')
+        %li
+          Длительность:
+          %span
+            = "#{(course.date_end.year * 12 + course.date_end.month) - (course.date_start.year * 12 + course.date_start.month)} (мес)"
+    %h6
+      Цена курса:
+      %span
+        = course.price
+    .link-btn
+      %a{:href => "#"} Скачать иформацию
+    .section-title
+      %h5 LATEST NEWS
+    %ul.social-links
+      %li.item
+        %i.fa.fa-twitter{"aria-hidden" => "true"}
+        .link-location
+          %p
+            @Love Boat soon
+            %span will be making another run
+            %a{:href => "#"} http:///D:/Font%20%20Icons/Icon-font-7-stroke-PIXEDEN-v-eference.html
+      %li.item
+        %i.fa.fa-twitter{"aria-hidden" => "true"}
+        .link-location
+          %p
+            @Love Boat soon
+            %span will be making another run
+            %a{:href => "#"} http:///D:/Font%20%20Icons/Icon-
+    .hot-link
+      %h5
+        Have any Queries?
+        %br Call us at:
+        %h4 +38(099) 00-00-1111
